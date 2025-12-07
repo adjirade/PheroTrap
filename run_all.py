@@ -5,8 +5,8 @@ import re
 import os
 
 # ========== KONFIGURASI ==========
-GIST_ID = "23a526369483bca4db5ef9ebec18408e"
-GITHUB_TOKEN = "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"  # ganti nanti
+GIST_ID = "XXX"
+GITHUB_TOKEN = "XXX"  # ganti nanti
 # =================================
 
 def run_flask():
