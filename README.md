@@ -1,52 +1,47 @@
-# PheroTrap
-🐛 PheroTrap – IoT-Based Smart Trap for Brown Planthopper Control
+#PheroTrap
 
-PheroTrap is an Internet of Things (IoT)-based smart pest control system designed to monitor and control brown planthopper (wereng) infestations in rice fields. The system uses pheromone-based attraction technology combined with smart sensors and microcontrollers to automatically detect, count, and record pest activity in real time.
+IoT-Based Smart Trap for Brown Planthopper Control
 
-This project aims to provide an eco-friendly, data-driven alternative to chemical pesticides by enabling early detection and precise population monitoring.
+PheroTrap is an Internet of Things (IoT)-based smart pest control system designed to monitor and control brown planthopper (wereng) infestations in rice fields. The system integrates pheromone-based attraction technology, smart sensors, and microcontrollers to automatically detect, count, and log pest activity in real time.
 
-✨ Key Features
+This project provides an eco-friendly and data-driven alternative to chemical pesticides by enabling early detection and accurate population monitoring, helping farmers make better pest management decisions.
 
-🎯 Pheromone-based trapping system for selective pest attraction
+Key Features
 
-📡 Remote monitoring via App
+Pheromone-based trapping system for selective pest attraction
 
-📊 Automatic insect counting using YOLO V11
+Remote monitoring via mobile or web application
 
-☁️ MQTT dan Cloudflared Connection
+Automatic insect detection and counting using YOLOv11
 
-🔋 Low-power design with battery and solar panel support
+MQTT communication with Cloudflared tunneling
 
+Low-power system with battery and solar panel support
 
+Technologies Used
 
-🛠️ Technologies Used
+Microcontrollers: ESP32 and ESP32-CAM
 
-Microcontroller: ESP32 and ESP32-CAM
-
-Sensors: DHT11
+Sensors: DHT11 (temperature and humidity)
 
 Connectivity: Wi-Fi, MQTT, HTTP
 
-IoT Platforms: Firebase, Google Spreadsheet
+IoT Platforms: Firebase and Google Spreadsheet
 
-Programming Language: C/C++ (Arduino Framework) and PYTHON
+Programming Languages:
 
-🎯 Project Objectives
+C/C++ (Arduino Framework)
 
-This project aims to:
+Python (AI processing and backend)
 
-Help farmers detect pest outbreaks early
+Project Objectives
+
+Help farmers detect pest outbreaks at an early stage
 
 Reduce dependency on chemical pesticides
 
 Improve agricultural efficiency through data-driven decisions
 
-🌱 Expected Impact
+Expected Impact
 
-With PheroTrap, farmers can:
-
-Make informed pest control decisions
-
-Maintain ecological balance in rice fields
-
-Increase crop productivity sustainably
+With PheroTrap, farmers can make informed and timely pest control decisions, maintain ecological balance in rice fields, and increase crop productivity in a sustainable way.
