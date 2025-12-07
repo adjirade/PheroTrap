@@ -2,8 +2,8 @@
 set -euo pipefail
 
 # ----------------- CONFIG -----------------
-GIST_ID="23a526369483bca4db5ef9ebec18408e"
-GITHUB_TOKEN="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"  # ganti dengan tokenmu sendiri
+GIST_ID="XXX"
+GITHUB_TOKEN="XXX"  # ganti dengan tokenmu sendiri
 GIST_FILE="esp_server_url.txt"
 SERVER_PORT=5000
 CLOUDFLARE_TIMEOUT=30
