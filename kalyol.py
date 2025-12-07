@@ -21,20 +21,20 @@ class Config:
     # YOLO - OPTIMIZED PARAMETERS
     MODEL_PATH = "/home/adjira/esp_server/YOLO/runs/train/yolo11pherox/weights/best.pt"
     UPLOAD_DIR = "/home/adjira/esp_server/uploads/"
-    CONFIDENCE_THRESHOLD = 0.4  # ✅ Diturunkan dari 0.5 untuk menangkap objek yang sulit terdeteksi
-    IOU_THRESHOLD = 0.5  # ✅ Dinaikkan sedikit untuk mengurangi duplikasi
+    CONFIDENCE_THRESHOLD = 0.4
+    IOU_THRESHOLD = 0.5
     
     # YOLO Inference Optimization
-    IMG_SIZE = 640  # ✅ Image size untuk inference (bisa 640, 1280 untuk detail lebih)
-    AUGMENT = True  # ✅ Test-time augmentation untuk deteksi lebih robust
-    AGNOSTIC_NMS = False  # Class-specific NMS
-    MAX_DET = 500  # ✅ Max detections per image (untuk kasus banyak wereng)
+    IMG_SIZE = 640
+    AUGMENT = True
+    AGNOSTIC_NMS = False
+    MAX_DET = 500
     
     # MQTT
-    BROKER = "da3a4cf65279448b9e7b5f08fa2f0d3c.s1.eu.hivemq.cloud"
+    BROKER = "XXX"
     PORT = 8883
-    USERNAME = "Phero1"
-    PASSWORD = "Budakonyot1"
+    USERNAME = "XXX"
+    PASSWORD = "XXX"
     TOPIC = "/pest"
     
     # Visualisasi
@@ -48,9 +48,8 @@ class Config:
     FRAME_DELAY = 1.0
     DISPLAY_DELAY = 50
     
-    # ✅ TEMPORAL SMOOTHING - Untuk stabilitas counting
-    TEMPORAL_WINDOW = 5  # Ambil rata-rata dari N frame terakhir
-    CONFIDENCE_BOOST = True  # Boost confidence untuk objek yang sering muncul
+    TEMPORAL_WINDOW = 5
+    CONFIDENCE_BOOST = True
 
 # ==========================
 # ENHANCED KALMAN FILTER WITH OUTLIER REJECTION
