@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Images/Pherotrap_Logo.png" alt="Smart Pherotrap Logo" width="200">
+</p>
+
 # 🌾 Smart Pherotrap
 ### Sistem Perangkap Feromon Terpadu Berbasis IoT untuk Pengendalian Hama Wereng pada Tanaman Padi
 
@@ -48,15 +52,15 @@ Tujuan sistem: membantu petani memantau tingkat serangan hama wereng secara otom
 ## 🏗️ Arsitektur Sistem
 
 ```
-┌─────────────────┐        HTTP POST (JPEG)        ┌──────────────────────┐
-│   ESP32-CAM      │ ──────────────────────────────▶│   Flask Server        │
-│  (Capture Foto)   │                                 │  (server.py)          │
-│                   │◀──── GET server URL (Gist) ────│  - Terima gambar      │
+┌─────────────────┐        HTTP POST (JPEG)         ┌───────────────────────┐
+│   ESP32-CAM     │ ──────────────────────────────▶│   Flask Server        │
+│  (Capture Foto) │                                 │    (server.py)        │
+│                 │◀──── GET server URL (Gist) ─── │  - Terima gambar      │
 └─────────────────┘                                 │  - Simpan ke /uploads │
-                                                      └──────────┬────────────┘
+                                                    └──────────┬────────────┘
                                                                  │ baca file terbaru
                                                                  ▼
-                                                      ┌──────────────────────┐
+                                                      ┌───────────────────────┐
                                                       │   kalyol.py           │
                                                       │  (YOLO Detection)     │
                                                       │  - Preprocessing      │
@@ -67,23 +71,23 @@ Tujuan sistem: membantu petani memantau tingkat serangan hama wereng secara otom
                                                       └──────────┬────────────┘
                                                                  │ publish MQTT
                                                                  ▼
-                                              ┌──────────────────────────────┐
+                                              ┌────────────────────────────────┐
                                               │   MQTT Broker (HiveMQ Cloud)   │
                                               │   Topic: /pest                 │
                                               │   Topic: /temperature          │
                                               │   Topic: /humidity             │
                                               │   Topic: /lampu                │
-                                              └──────────────┬─────────────────┘
+                                              └───────────────┬────────────────┘
                                                               │ subscribe
                                                               ▼
-                                              ┌──────────────────────────────┐
+                                              ┌────────────────────────────────┐
                                               │   ESP32 (Node Utama)           │
                                               │  - Baca sensor DHT22           │
                                               │  - Kontrol relay lampu         │
                                               │    (jadwal / FORCE override)   │
                                               │  - Tampilkan status di LCD     │
                                               │  - Kirim data ke Google Sheets │
-                                              └──────────────────────────────┘
+                                              └────────────────────────────────┘
 ```
 
 **Ringkasan alur:** ESP32-CAM mengambil foto perangkap → upload ke server Flask lokal (di-tunnel via Cloudflare, URL-nya disimpan & dibaca lewat GitHub Gist) → `kalyol.py` mengambil gambar terbaru, mendeteksi wereng dengan YOLOv11, menstabilkan hasil hitungan dengan filter bertingkat → hasil dipublish ke MQTT → ESP32 node utama menerima jumlah wereng, membaca suhu/kelembaban, mengontrol relay lampu perangkap, menampilkan status di LCD, dan mengirim seluruh data ke Google Sheets untuk pencatatan historis.
@@ -330,10 +334,10 @@ Description=Smart Pherotrap Server
 After=network.target
 
 [Service]
-WorkingDirectory=/home/adjira/esp_server
-ExecStart=/home/adjira/esp_server/run_all.sh
+WorkingDirectory=/home/xxx/esp_server
+ExecStart=/home/xxx/esp_server/run_all.sh
 Restart=always
-User=adjira
+User=xxx
 
 [Install]
 WantedBy=multi-user.target
@@ -403,7 +407,7 @@ Beberapa arah pengembangan yang bisa dilanjutkan oleh adik tingkat:
 
 Project ini dikembangkan secara kolaboratif sebagai bagian dari Hibah Penelitian Mahasiswa ITERA dan Tugas Besar Mata Kuliah IoT, Program Studi Teknik Telekomunikasi, ITERA.
 
-### Mikasa — Programming & System Design
+### Adjira Eka Dewanda - Programming & System Design
 Mahasiswa S1 Teknik Telekomunikasi, Institut Teknologi Sumatera (ITERA). Bertanggung jawab pada sisi **programming, desain alur sistem, penentuan kebutuhan perangkat, perancangan flow machine learning, serta perakitan hardware** pada project Smart Pherotrap ini.
 
 Memegang tiga sertifikasi profesi BNSP: **Junior Web Developer**, **Junior Network Technician (TUJK)**, dan **Junior Cybersecurity** — kombinasi yang mendukung kemampuan lintas domain mulai dari jaringan, keamanan siber, hingga pengembangan perangkat lunak. Saat ini juga sedang menyelesaikan Tugas Akhir yang mengangkat topik sistem radar mmWave HLK-LD2450 dengan ESP32 sebagai bridge ke pipeline Python untuk multi-target tracking menggunakan estimasi paralel Unscented Kalman Filter (UKF) dan Particle Filter — pengalaman yang secara langsung diterapkan pada desain filtering bertingkat (Temporal Filter + Kalman Filter) di project Smart Pherotrap ini.
