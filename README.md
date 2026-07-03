@@ -412,8 +412,6 @@ Mahasiswa S1 Teknik Telekomunikasi, Institut Teknologi Sumatera (ITERA). Bertang
 
 Memegang tiga sertifikasi profesi BNSP: **Junior Web Developer**, **Junior Network Technician (TUJK)**, dan **Junior Cybersecurity** — kombinasi yang mendukung kemampuan lintas domain mulai dari jaringan, keamanan siber, hingga pengembangan perangkat lunak. Saat ini juga sedang menyelesaikan Tugas Akhir yang mengangkat topik sistem radar mmWave HLK-LD2450 dengan ESP32 sebagai bridge ke pipeline Python untuk multi-target tracking menggunakan estimasi paralel Unscented Kalman Filter (UKF) dan Particle Filter — pengalaman yang secara langsung diterapkan pada desain filtering bertingkat (Temporal Filter + Kalman Filter) di project Smart Pherotrap ini.
 
-> *Kontributor lain silakan menambahkan bio masing-masing di bagian ini.*
-
 ---
 
 ## 📄 Lisensi
